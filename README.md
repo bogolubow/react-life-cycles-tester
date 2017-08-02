@@ -2,6 +2,9 @@
 
 Cykle życia w aplikacji React.js
 
+Efekty można zobaczyć pod tym adresem: https://bogolubow.github.io/react-life-cycles-tester/
+Pamiętaj, aby zajrzeć do konsoli!
+
 ## Opis metod
 
 - **constructor**, etoda uruchamiana na początku tworzenia instancji obiektu. Czyli w momencie, gdy komponent ma zostać zamontowany
@@ -21,7 +24,7 @@ Cykle życia w aplikacji React.js
 
 - **componentWillUnmount**, metoda uruchamiana przed usunięciem komponentu z drzewa DOM. Należy zaznaczyć, że komponent musi być przed tym zamontowany.
 
-## przypadki użycia
+## Przypadki użycia
 
 W naszej aplikacji mamy dwa komponenty `App` i `LifeCyclesTester`.
 
