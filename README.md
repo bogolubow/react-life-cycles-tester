@@ -16,7 +16,7 @@ Cykle życia w aplikacji React.js
 
 - **componentWillUpdate**, metoda uruchamiana przed aktualizacją komponentu. Czyli komponent wcześniej został już zamontowany, a teraz ma być zaaktualizowany.
 
--- **componentDidUpdate**, metoda uruchamiana po zaaktualizownaiu komponentu.
+- **componentDidUpdate**, metoda uruchamiana po zaaktualizownaiu komponentu.
 
 
 - **componentWillUnmount**, metoda uruchamiana przed usunięciem komponentu z drzewa DOM. Należy zaznaczyć, że komponent musi być przed tym zamontowany.
