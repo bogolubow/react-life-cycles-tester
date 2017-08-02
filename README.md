@@ -2,40 +2,24 @@
 
 Cykle życia w aplikacji React.js
 
-## opis metod
+## Opis metod
 
-### constructor
+- **constructor**, etoda uruchamiana na początku tworzenia instancji obiektu. Czyli w momencie, gdy komponent ma zostać zamontowany
 
-Metoda uruchamiana na początku tworzenia instancji obiektu. Czyli w momencie, gdy komponent ma zostać zamontowany
+- **componentWillMount**, etoda uruchamiana przed zamontowaniem komponentu, ale po wykonaniu działań w konstruktorze
 
-### componentWillMount
+- **componentDidMount**, metoda uruchomiona, kiedy komponent został umieszczony już w drzewie DOM
 
-Metoda uruchamiana przed zamontowaniem komponentu, ale po wykonaniu działań w konstruktorze
+- **componentWillReceiveProps**, metoda ruruchamiana w momencie gdy komponent otrzyma nowe właściwości. Może się to zdarzyć w momencie, gdy komponent rodzic przekazuje przez właściwość (prop) swój stan (state). Wtedy całość jest renderowania ponownie, a komponent dziecko otrzymuje nową wartość dla danej właściwości.
 
-### componentDidMount
+- **shouldComponentUpdate**, metoda wywoływana kiedy komponent ma być ponownie przerenderowany. W tym momencie możemy zadecydować czy ma zostać zaaktualizowany czy nie - zwracając true lub false
 
-Metoda uruchomiona, kiedy komponent został umieszczony już w drzewie DOM
+- **componentWillUpdate**, metoda uruchamiana przed aktualizacją komponentu. Czyli komponent wcześniej został już zamontowany, a teraz ma być zaaktualizowany.
 
-### componentWillReceiveProps
-
-Metoda ruruchamiana w momencie gdy komponent otrzyma nowe właściwości. Może się to zdarzyć w momencie, gdy komponent rodzic przekazuje przez właściwość (prop) swój stan (state). Wtedy całość jest renderowania ponownie, a komponent dziecko otrzymuje nową wartość dla danej właściwości.
-
-### shouldComponentUpdate
-
-Metoda wywoływana kiedy komponent ma być ponownie przerenderowany. W tym momencie możemy zadecydować czy ma zostać zaaktualizowany czy nie - zwracając true lub false
-
-### componentWillUpdate
-
-Metoda uruchamiana przed aktualizacją komponentu. Czyli komponent wcześniej został już zamontowany, a teraz ma być zaaktualizowany.
-
-### componentDidUpdate
-
-Metoda uruchamiana po zaaktualizownaiu komponentu.
+-- **componentDidUpdate**, metoda uruchamiana po zaaktualizownaiu komponentu.
 
 
-### componentWillUnmount
-
-Metoda uruchamiana przed usunięciem komponentu z drzewa DOM. Należy zaznaczyć, że komponent musi być przed tym zamontowany.
+- **componentWillUnmount**, metoda uruchamiana przed usunięciem komponentu z drzewa DOM. Należy zaznaczyć, że komponent musi być przed tym zamontowany.
 
 ## przypadki użycia
 
@@ -51,7 +35,7 @@ Natomiast w komponencie `LifeCyclesTester` stworzyliśmy wszystkie opisane wyże
 
 W tym komponencie mamy jeszcze timeout, który zmienia `this.state.number` oraz `this.state.counter`.
 
-### zamontowanie komponentu
+### Zamontowanie komponentu
 
 Po uruchomieniu strony zostanie zamontowany komponent i w konsoli będziemy mogli zobaczyć:
 
@@ -65,7 +49,7 @@ LifeCyclesTester componentDidMount
 
 ```
 
-### zmiana props
+### Zmiana props
 
 Po 3 sekundach uruchamiany jest timeout, który dodaje do `this.state.data` dodatkową losową liczbę co powoduje, że właściwość `data` przekazywana do `LifeCyclesTester` się zmienia. Efekt tego widzimy w konsoli:
 
@@ -79,7 +63,7 @@ LifeCyclesTester render
 LifeCyclesTester LifeCyclesTester componentDidUpdate
 ```
 
-### zmiana state
+### Zmiana state
 
 Po 7 sekundach urachamiany jest timeout, który zmienia stan dla `LifeCyclesTester`, co powoduje wyświetlenie w consoli poniższych danych:
 
@@ -91,7 +75,7 @@ LifeCyclesTester render
 LifeCyclesTester LifeCyclesTester componentDidUpdate
 ```
 
-### odmontowanie komponentu
+### Odmontowanie komponentu
 
 Po 11 sekundach wywoływany jest timeout, który zmienia stan `this.state.unmount` na `true`, co powoduje, że `App::render()` zwraca `null` czyli `LifeCyclesTester` nie jest już wyświelany - ten komponent zostanie odmontowany. W konsoli zobaczymy:
 
